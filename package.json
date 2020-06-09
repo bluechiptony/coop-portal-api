@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.ts",
+    "start": "npm run clean && tsc && node dist/app",
+    "clean": "rm -rf dist",
+    "build": "tsc -b",
+    "test": "jest --runInBand --detectOpenHandles",
+    "gen-doc": "apidoc i ./ -e node_modules -o documentation/"
   },
   "keywords": [],
   "author": "",
