@@ -8,3 +8,11 @@ touch src/handlers/$1/$1-validator.ts &&
 touch src/handlers/$1/$1-adapter.ts &&
 touch src/handlers/$1/$1-use-cases.ts &&
 touch src/handlers/$1/$1.test.ts
+
+
+echo 'describe("module  tests", () => {
+  it("Should return true", () => {
+    expect(true).toBeTruthy();
+  });
+});
+' > src/handlers/$1/$1.test.ts
