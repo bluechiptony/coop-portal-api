@@ -1,7 +1,11 @@
 /**
  * Create nw zonal command
  */
-export const createZonalCommand = async (): Promise<string> => {
+export const createZonalCommand = async (commandRequest?: any): Promise<string> => {
+  try {
+  } catch (error) {
+    throw error;
+  }
   return "";
 };
 
