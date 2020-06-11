@@ -22,6 +22,6 @@ COPY .env ./dist/
 WORKDIR ./dist
 
 
-EXPOSE 3500
+EXPOSE 4800
 
 CMD [ "node", "app.js" ]

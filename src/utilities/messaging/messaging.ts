@@ -1,12 +1,17 @@
 import Mailgun from "mailgun-js";
 import logger from "../helpers/logger";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-const apiKey: string = process.env.MAILGUN_API_KEY || "";
+const apiKey: string = process.env.MAILGUN_KEY || "";
 const domain: string = process.env.MAILGUN_DOMAIN || "";
 const mailgun = Mailgun({
   apiKey: apiKey,
   domain: domain,
 });
+
+console.log(process.env.MAILGUN_KEY);
+console.log(process.env.PORT);
 
 export const sendAccountActivationMessage = (emailAddress: string, activationCode: string, publicAccess: boolean): void => {
   let messageDetails: any = {

@@ -166,7 +166,7 @@ export const getAccountTypes = async () => {
 
 export const checkIfAuthenticationProfileExists = async (emailAddress: string): Promise<boolean> => {
   try {
-    let result = await connector.table(authTable).count("email_address").where({ email_address: emailAddress });
+    let result: any = await connector.table(authTable).count("email_address").where({ email_address: emailAddress });
 
     return result[0].count > 0 ? true : false;
   } catch (error) {

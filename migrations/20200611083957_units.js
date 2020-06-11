@@ -1,9 +1,12 @@
-let tableName = "zonal_commands";
+let tableName = "units";
+
 exports.up = function (knex) {
   return knex.schema.createTable(tableName, (table) => {
-    table.increments("zonal_command_id").primary();
-    table.string("zonal_command_id", 50).notNullable();
-    table.string("zonal_command_name", 50).notNullable();
+    table.increments("unit_id").primary();
+    table.string("unit_code", 20).notNullable();
+    table.string("command_code", 20).notNullable();
+    table.string("department_code", 20).notNullable();
+    table.string("department_name", 100).notNullable();
     table.date("created_date").notNullable();
     table.date("updated_date").notNullable();
     table.text("created_by");

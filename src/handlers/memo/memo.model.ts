@@ -3,14 +3,15 @@ import { Staff } from "../staff/staff.model";
 export interface Memo {
   id?: any;
   memoCode: string;
-  title: string;
-  category: string;
-  origin: string;
+  memoTitle: string;
+  memoCategory: string;
+  memoOrigin: string;
+  memoDescription: string;
   resolved: boolean;
-  respondee: string;
   createdDate: Date;
   updatedDate: Date;
-  priority?: string;
+  memoPriority?: string;
+  memoType?: string;
 }
 
 export enum ItemPriority {
@@ -25,6 +26,5 @@ export interface MemoReply {
   id?: any;
   staff?: Staff;
   reply: string;
-  urgency?: ItemPriority;
-  replyDate: Date;
+  createdDate: Date;
 }

@@ -1,7 +1,7 @@
 {
   "name": "coop-portal-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Coop portal api Built with typescript",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/app.ts",
@@ -10,6 +10,10 @@
     "build": "tsc -b",
     "test": "jest --runInBand --detectOpenHandles",
     "gen-doc": "apidoc i ./ -e node_modules -o documentation/"
+  },
+  "repository": {
+    "url": "https://github.com/bluechiptony/coop-portal-api",
+    "type": "git"
   },
   "keywords": [],
   "author": "",

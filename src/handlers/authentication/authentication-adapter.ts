@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { adaptExpressRequest } from "../../utilities/helpers/helpers";
 import logger from "../../utilities/helpers/logger";
-import { systemPerformsUserLogin, userGetsAccountTypes, userCreatesAuthenticationProfile, userMakesForgotPasswordRequest, userSetsPassword, userResetsPassword } from "./authentication-handler";
+import { systemPerformsUserLogin, userGetsAccountTypes, userCreatesAuthenticationProfile, userMakesForgotPasswordRequest, userSetsPassword, userResetsPassword } from "./authentication-use-cases";
 import { getStatusCodeFromException } from "../../utilities/responses/responses";
 
 export const login = async (req: Request, res: Response) => {

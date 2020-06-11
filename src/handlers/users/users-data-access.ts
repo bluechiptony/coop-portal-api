@@ -3,8 +3,8 @@ import { User, UserAccount } from "./users.model";
 import { Connection } from "../../config/database";
 import { DatabaseError } from "../../utilities/errors/errors";
 import { sanitize } from "../../utilities/helpers/helpers";
-import { AuthenticatedUser, AccountTypes } from "../authentication/authentication.model";
 import logger from "../../utilities/helpers/logger";
+import { AuthenticatedUser, AccountTypes } from "../authentication/authentication.model";
 
 const userTable: string = "users";
 const authenticationTable: string = "authentication";

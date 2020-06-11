@@ -1,11 +1,11 @@
-import nanoid from "nanoid/generate";
+import nanoid from "nanoid";
 const dictionary = require("nanoid-dictionary");
 const keySanitizer = require("keys-to-camelcase");
 const allowableStrings = dictionary.numbers + dictionary.lowercase + dictionary.uppercase;
 
 export const generateToken = (length: number): string => {
-  // const custom = nanoid.customAlphabet(allowableStrings, length);
-  return nanoid(allowableStrings, length).toUpperCase();
+  const custom = nanoid.customAlphabet(allowableStrings, length);
+  return custom();
 };
 
 export const adaptExpressRequest = (req: any): AppAdaptedRequest => {
