@@ -1,22 +1,26 @@
 export interface Staff {
   id?: any;
   userCode?: string;
+  staffCode?: string;
   firstName: string;
-  middeName?: string;
+  middleName?: string;
   lastName: string;
   dob: Date;
   nationality: string;
-  stateOforigin: number;
+  stateOfOrigin: number;
   lgaOfOrigin: number;
   phoneNumber?: string;
   emailAddress: string;
 }
 
-export interface StaffDetails {
+export interface StaffEmploymentDetails {
   userCode?: string;
   staffCode?: string;
   staffNumber?: string;
   zonalCommand: string;
   department: string;
+  designation: string;
+  gradeLevel: string;
+  step: string;
   unit?: string;
 }

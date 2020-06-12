@@ -47,3 +47,33 @@ export const getLgasForState = async (state: number) => {
     throw new DatabaseError("Internal connection error");
   }
 };
+
+export const getNationalities = async () => {
+  try {
+    let result = await connector.table(nationsTable).select("*");
+    return sanitize(result);
+  } catch (error) {
+    logger.error(error.messsage);
+    throw new DatabaseError("Internal connection error");
+  }
+};
+
+export const getCountries = async () => {
+  try {
+    let result = await connector.table(nationsTable).select("*");
+    return sanitize(result);
+  } catch (error) {
+    logger.error(error.messsage);
+    throw new DatabaseError("Internal connection error");
+  }
+};
+
+export const getSingleNationality = async (nationId: number) => {
+  try {
+    let result = await connector.table(nationsTable).select("*").where({ nation_id: nationId });
+    return sanitize(result);
+  } catch (error) {
+    logger.error(error.messsage);
+    throw new DatabaseError("Internal connection error");
+  }
+};
