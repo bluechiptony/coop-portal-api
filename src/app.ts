@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import userRoutes from "./routes/users";
 import authenticationRoutes from "./routes/authentication";
-// import facilityRoutes from "./routes/facility";
+import departmentRoutes from "./routes/department";
 import localeRoutes from "./routes/locale";
 // import serviceRoutes from "./routes/services";
 // import organizationRoutes from "./routes/organization";
@@ -25,8 +25,8 @@ bnshia.use(cors());
 
 bnshia.use("/auth", authenticationRoutes);
 bnshia.use("/users", userRoutes);
-// bnshia.use("/facility", facilityRoutes);
 bnshia.use("/locale", localeRoutes);
+bnshia.use("/departments", departmentRoutes);
 // bnshia.use("/services", serviceRoutes);
 // bnshia.use("/organizations", organizationRoutes);
 // bnshia.use("/dispensary", dispensaryRoutes);

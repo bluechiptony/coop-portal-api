@@ -23,4 +23,15 @@ export interface StaffEmploymentDetails {
   gradeLevel: string;
   step: string;
   unit?: string;
+  employedDate: Date;
+  serviceRetirementDate?: Date;
+  statutoryRetirementDate?: Date;
+}
+
+export interface StaffContact {
+  userCode?: any;
+  staffCode: string;
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
 }

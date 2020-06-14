@@ -1,0 +1,100 @@
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:15:43.995Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:15:43.997Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:17:30.183Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:17:30.183Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.523Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.529Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.530Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.765Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.771Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.772Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.824Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.828Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.949Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:41:21.154Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:41:21.158Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:42:26.075Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:42:26.079Z'
+}
+{
+  message: 'insert into "departments" ("department_code", "department_name") values ($1, $2) returning "department_code" - null value in column "created_date" violates not-null constraint',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.870Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.872Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.873Z'
+}

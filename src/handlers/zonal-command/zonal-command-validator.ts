@@ -1,12 +1,14 @@
 import { ZonalCommand } from "./zonal-command.model";
-import { validateRequiredStringProperty } from "../../utilities/helpers/validation";
+import { validateRequiredStringProperty, validateRequiredProperty } from "../../utilities/helpers/validation";
 import { generateToken } from "../../utilities/helpers/helpers";
 
 export const createValidatedZonalCommand = (request: any): ZonalCommand => {
-  validateRequiredStringProperty("Zone name", request.zoneCode);
+  validateRequiredStringProperty("Zone name", request.zonalCommandName);
+  validateRequiredProperty("Zone name", request.active);
 
   return {
-    zoneName: request.zoneName,
-    zoneCode: request.zoneCode || generateToken(8),
+    zonalCommandName: request.zonalCommandName,
+    active: request.active,
+    zonalCommandCode: request.zonalCommandCode || generateToken(8).toUpperCase(),
   };
 };

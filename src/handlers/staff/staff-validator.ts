@@ -19,8 +19,8 @@ export const validateStaffDetails = (request: any): Staff => {
   }
 
   return {
-    userCode: request.userCode || generateToken(8),
-    staffCode: request.staffCode || generateToken(8),
+    userCode: request.userCode || generateToken(8).toUpperCase(),
+    staffCode: request.staffCode || generateToken(8).toUpperCase(),
     firstName: request.firstName,
     middleName: request.middleName,
     lastName: request.lastName,
@@ -46,6 +46,8 @@ export const validateEmploymentDetails = (request: any): StaffEmploymentDetails 
   validateRequiredStringProperty("Grade Level", request.gradeLevel);
   validateRequiredStringProperty("Salary Step", request.step);
 
+  validateRequiredStringProperty("Employment date", request.employedDate);
+
   return {
     userCode: request.userCode,
     staffCode: request.staffCode,
@@ -56,5 +58,8 @@ export const validateEmploymentDetails = (request: any): StaffEmploymentDetails 
     gradeLevel: request.gradeLevel,
     step: request.step,
     unit: request.unit,
+    employedDate: request.employedDate,
+    statutoryRetirementDate: request.statutoryRetirementDate,
+    serviceRetirementDate: request.serviceRetirementDate,
   };
 };

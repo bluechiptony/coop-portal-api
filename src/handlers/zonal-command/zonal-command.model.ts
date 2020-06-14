@@ -1,5 +1,6 @@
 export interface ZonalCommand {
   id?: any;
-  zoneName: string;
-  zoneCode?: string;
+  zonalCommandName: string;
+  zonalCommandCode?: string;
+  active: boolean;
 }

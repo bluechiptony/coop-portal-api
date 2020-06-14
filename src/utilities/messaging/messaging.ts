@@ -10,9 +10,6 @@ const mailgun = Mailgun({
   domain: domain,
 });
 
-console.log(process.env.MAILGUN_KEY);
-console.log(process.env.PORT);
-
 export const sendAccountActivationMessage = (emailAddress: string, activationCode: string, publicAccess: boolean): void => {
   let messageDetails: any = {
     from: "Benue state Health Insurance Agency <donot-reply@bnshia.be.gov.ng>",

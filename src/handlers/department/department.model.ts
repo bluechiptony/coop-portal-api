@@ -3,3 +3,11 @@ export interface Department {
   departmentName: string;
   departmentCode?: string;
 }
+
+export interface DepartmentUnit {
+  id?: any;
+  departmentCode: string;
+  zonallCommandCode: string;
+  departmentName: string;
+  zonalCommandName: string;
+}

@@ -1,0 +1,190 @@
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:15:43.570Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:15:43.995Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:15:43.997Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:17:30.177Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:17:30.183Z'
+}
+{
+  message: 'Error: secretOrPrivateKey must have a value',
+  level: 'error',
+  timestamp: '2020-06-14T20:17:30.183Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:17:49.935Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:19:19.789Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:22:59.443Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:23:47.344Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:25:25.337Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T20:53:47.739Z'
+}
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-06-14T21:22:21.351Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:24:39.728Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.523Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.529Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:37:12.530Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.765Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.771Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:38:45.772Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.824Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.828Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-14T21:39:42.949Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:41:21.154Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:41:21.158Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:42:26.075Z'
+}
+{
+  message: 'Department name already exists',
+  level: 'error',
+  timestamp: '2020-06-14T21:42:26.079Z'
+}
+{
+  message: 'insert into "departments" ("department_code", "department_name") values ($1, $2) returning "department_code" - null value in column "created_date" violates not-null constraint',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.870Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.872Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-14T21:45:56.873Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:47:15.783Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:47:27.849Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:47:57.682Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:50:49.951Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:55:20.389Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:55:55.925Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:56:05.983Z'
+}
+{
+  message: 'Login attempt: undefined',
+  level: 'info',
+  timestamp: '2020-06-14T21:56:15.496Z'
+}

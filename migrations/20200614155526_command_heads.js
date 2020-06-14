@@ -1,9 +1,9 @@
-let tableName = "unit_heads";
+let tableName = "command_heads";
 
 exports.up = function (knex) {
   return knex.schema.createTable(tableName, (table) => {
     table.increments("unit_head_id").primary();
-    table.string("unit_code", 50).notNullable();
+    table.string("zonal_command_code", 20).notNullable();
     table.string("staff_code").notNullable();
     table.string("user_code").notNullable();
     table.string("first_name").notNullable();
