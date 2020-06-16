@@ -849,3 +849,158 @@
   level: 'error',
   timestamp: '2020-06-16T05:16:17.228Z'
 }
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-16T05:28:46.530Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T05:28:46.534Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T05:28:46.535Z'
+}
+{
+  message: 'select * from "staff" where "user_code" = $1 - column "user_code" does not exist',
+  level: 'error',
+  timestamp: '2020-06-16T05:40:29.604Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T05:40:29.611Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T05:40:29.611Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:16:44.564Z'
+}
+{
+  message: 'Email address must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:16:44.567Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:19:46.981Z'
+}
+{
+  message: 'State of origin must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:19:46.986Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:21:20.394Z'
+}
+{
+  message: 'State of origin must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:21:20.398Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:30:15.329Z'
+}
+{
+  message: 'First name must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:30:15.331Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:30:54.928Z'
+}
+{
+  message: 'First name must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:30:54.932Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:31:33.500Z'
+}
+{
+  message: 'Zonal command must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:31:33.504Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:37:04.728Z'
+}
+{
+  message: 'Staff number must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:37:04.730Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:37:37.683Z'
+}
+{
+  message: 'Employment date must be provided',
+  level: 'error',
+  timestamp: '2020-06-16T06:37:37.698Z'
+}
+{
+  message: 'Undefined binding(s) detected when compiling SELECT. Undefined column(s): [staff_code] query: select count("staff_code") from "staff_employment" where "staff_code" = ?',
+  level: 'error',
+  timestamp: '2020-06-16T06:48:44.703Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:48:44.706Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T06:48:44.706Z'
+}
+{
+  message: 'Undefined binding(s) detected when compiling SELECT. Undefined column(s): [staff_code] query: select count("staff_code") from "staff_employment" where "staff_code" = ?',
+  level: 'error',
+  timestamp: '2020-06-16T06:49:46.672Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:49:46.677Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T06:49:46.678Z'
+}
+{
+  message: 'Undefined binding(s) detected when compiling SELECT. Undefined column(s): [staff_code] query: select count("staff_code") from "staff_employment" where "staff_code" = ?',
+  level: 'error',
+  timestamp: '2020-06-16T06:50:42.527Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T06:50:42.529Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T06:50:42.529Z'
+}

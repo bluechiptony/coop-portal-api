@@ -40,7 +40,7 @@ export const createStaff = async (staff: Staff, creator?: string): Promise<strin
   }
 };
 
-export const updateStaff = async (staff: Staff, editor: string): Promise<string> => {
+export const updateStaff = async (staff: Staff, editor?: string): Promise<string> => {
   try {
     let result: any = await connector
       .table(staffTable)
@@ -74,6 +74,15 @@ export const getStaff = async (pageSize?: number, pageNumber?: number): Promise<
     throw new DatabaseError("Internal connection error");
   }
 };
+export const getDetailedStaff = async (pageSize?: number, pageNumber?: number): Promise<any[]> => {
+  try {
+    let result: any = await connector.table(staffTable).select("*").innerJoin(staffEmploymentTable, { "staff_employmeny.staff_code": "staff.staff_code" });
+    return sanitize(result);
+  } catch (error) {
+    logger.error(error.message);
+    throw new DatabaseError("Internal connection error");
+  }
+};
 
 export const getSingleStaff = async (staffCode: string): Promise<any> => {
   try {
@@ -87,9 +96,13 @@ export const getSingleStaff = async (staffCode: string): Promise<any> => {
 };
 export const getSingleStaffWithUserCode = async (userCode: string): Promise<any> => {
   try {
-    let result: any = connector.table(staffTable).select("*").where({ user_code: userCode });
+    let result: any = await connector.table(staffTable).select("*").where({ staff_code: userCode });
 
-    return await sanitize(result[0]);
+    if (result.length > 0) {
+      return sanitize(result[0]);
+    } else {
+      return {};
+    }
   } catch (error) {
     logger.error(error.message);
     throw new DatabaseError("Internal connection error");
@@ -102,8 +115,8 @@ export const createStaffEmploymentDetails = async (details: StaffEmploymentDetai
       .table(staffEmploymentTable)
       .insert({
         staff_code: details.staffCode,
-        command_code: details.zonalCommand,
-        department_code: details.department,
+        zonal_command_code: details.zonalCommandCode,
+        department_code: details.departmentCode,
         unit_code: details.unit,
         designation: details.designation,
         grade_level: details.gradeLevel,
@@ -129,8 +142,8 @@ export const updateStaffEmploymentDetails = async (details: StaffEmploymentDetai
       .table(staffEmploymentTable)
       .update({
         staff_code: details.staffCode,
-        command_code: details.zonalCommand,
-        department_code: details.department,
+        zonal_command_code: details.zonalCommandCode,
+        department_code: details.departmentCode,
         unit_code: details.unit,
         designation: details.designation,
         grade_level: details.gradeLevel,
@@ -304,6 +317,27 @@ export const updateStaffZonalCommand = async (staffCode: string, prevZonalComman
 export const staffInZonalCommand = async (staffCode: string): Promise<boolean> => {
   try {
     let result: any = await connector.table(staffZonalCommandTable).count("staff_code").where({ staff_code: staffCode });
+    return result[0].count > 0 ? true : false;
+  } catch (error) {
+    logger.error(error.message);
+    throw new DatabaseError("Internal connection error");
+  }
+};
+
+//Checm functions
+
+export const staffDetailsExists = async (staffCode: string) => {
+  try {
+    let result: any = await connector.table(staffTable).count("staff_code").where({ staff_code: staffCode });
+    return result[0].count > 0 ? true : false;
+  } catch (error) {
+    logger.error(error.message);
+    throw new DatabaseError("Internal connection error");
+  }
+};
+export const staffEmploymentExists = async (staffCode: string) => {
+  try {
+    let result: any = await connector.table(staffEmploymentTable).count("staff_code").where({ staff_code: staffCode });
     return result[0].count > 0 ? true : false;
   } catch (error) {
     logger.error(error.message);

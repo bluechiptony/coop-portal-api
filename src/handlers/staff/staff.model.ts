@@ -1,7 +1,7 @@
 export interface Staff {
   id?: any;
   userCode?: string;
-  staffCode?: string;
+  staffCode: string;
   firstName: string;
   middleName?: string;
   lastName: string;
@@ -11,15 +11,15 @@ export interface Staff {
   stateOfOrigin: number;
   lgaOfOrigin: number;
   phoneNumber?: string;
-  emailAddress: string;
+  emailAddress?: string;
 }
 
 export interface StaffEmploymentDetails {
   userCode?: string;
-  staffCode?: string;
-  staffNumber?: string;
-  zonalCommand: string;
-  department: string;
+  staffCode: string;
+  staffNumber: string;
+  zonalCommandCode: string;
+  departmentCode: string;
   designation?: string;
   gradeLevel?: string;
   step: string;

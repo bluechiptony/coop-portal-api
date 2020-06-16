@@ -4,6 +4,7 @@ let __staff: Staff = {
   userCode: "324734",
   staffCode: "324734",
   firstName: "Jamie",
+  gender: "MALE",
   middleName: "Surbur",
   lastName: "Blanka",
   dob: new Date(),

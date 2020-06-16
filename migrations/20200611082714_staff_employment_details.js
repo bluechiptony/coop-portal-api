@@ -4,7 +4,7 @@ exports.up = function (knex) {
   return knex.schema.createTable(tableName, (table) => {
     table.increments("staff_employment_id").primary();
     table.string("staff_code", 20).notNullable();
-    table.string("command_code", 50).nullable();
+    table.string("zonal_command_code", 50).nullable();
     table.string("department_code", 20).nullable();
     table.string("unit_code", 50).nullable();
     table.string("designation", 100).nullable();

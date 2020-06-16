@@ -16,6 +16,7 @@ describe("Staff data access functions", () => {
     firstName: "Jamie",
     middleName: "Surbur",
     lastName: "Blanka",
+    gender: "MALE",
     dob: new Date(),
     nationality: "Nigerian",
     stateOfOrigin: 23,

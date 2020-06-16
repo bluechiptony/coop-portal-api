@@ -9,18 +9,18 @@ import { generateToken } from "../../utilities/helpers/helpers";
 export const validateStaffDetails = (request: any): Staff => {
   validateRequiredStringProperty("First name", request.firstName);
   validateRequiredStringProperty("Last name", request.lastName);
-  validateRequiredStringProperty("Email address", request.emailAddress);
-  validateRequiredNumericProperty("State of origin", request.stateOfOrifin);
+  // validateRequiredStringProperty("Email address", request.emailAddress);
+  validateRequiredNumericProperty("State of origin", request.stateOfOrigin);
   validateRequiredNumericProperty("Lga of origin", request.lgaOfOrigin);
   validateRequiredNumericProperty("Nationality", request.nationality);
   validateRequiredStringProperty("Gender", request.gender);
   validateRequiredProperty("Gender", request.gender);
 
-  if (request.phonenUmber) {
-    validatePhoneNumber(request.phoneNumber);
-  }
+  // if (request.phonenUmber) {
+  //   validatePhoneNumber(request.phoneNumber);
+  // }
 
-  validateEmailAddress(request.emailAddress);
+  // validateEmailAddress(request.emailAddress);
 
   let staffCode;
   if (!request.userCode) {
@@ -28,8 +28,9 @@ export const validateStaffDetails = (request: any): Staff => {
   }
 
   return {
-    userCode: request.userCode || staffCode,
-    staffCode: request.userCode || staffCode,
+    userCode: request.staffCode || staffCode,
+    staffCode: request.staffCode || staffCode,
+
     firstName: request.firstName,
     middleName: request.middleName,
     lastName: request.lastName,
@@ -49,9 +50,9 @@ export const validateStaffDetails = (request: any): Staff => {
  */
 export const validateEmploymentDetails = (request: any): StaffEmploymentDetails => {
   validateRequiredStringProperty("Staff code", request.staffCode);
-  validateRequiredStringProperty("Zonal command", request.zonalCommand);
-  validateRequiredStringProperty("Staff number", request.staffNumber);
-  validateRequiredStringProperty("Department", request.department);
+  validateRequiredStringProperty("Zonal command", request.zonalCommandCode);
+  // validateRequiredStringProperty("Staff number", request.staffNumber);
+  validateRequiredStringProperty("Department", request.departmentCode);
   validateRequiredStringProperty("Request", request.designation);
   validateRequiredStringProperty("Grade Level", request.gradeLevel);
   validateRequiredStringProperty("Salary Step", request.step);
@@ -59,15 +60,15 @@ export const validateEmploymentDetails = (request: any): StaffEmploymentDetails 
   validateRequiredStringProperty("Employment date", request.employedDate);
 
   return {
-    userCode: request.userCode,
+    userCode: request.staffCode,
     staffCode: request.staffCode,
-    staffNumber: request.staffNumber,
-    zonalCommand: request.zonalCommand,
-    department: request.department,
+    staffNumber: request.staffCode,
+    zonalCommandCode: request.zonalCommandCode,
+    departmentCode: request.departmentCode,
     designation: request.designation,
     gradeLevel: request.gradeLevel,
     step: request.step,
-    unit: request.unit,
+    unit: request.unitCode,
     employedDate: request.employedDate,
     statutoryRetirementDate: request.statutoryRetirementDate,
     serviceRetirementDate: request.serviceRetirementDate,

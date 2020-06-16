@@ -1,8 +1,7 @@
 import logger from "../../utilities/helpers/logger";
 import { Staff, StaffEmploymentDetails, AccountAssignment } from "./staff.model";
 import { validateStaffDetails, validateEmploymentDetails, validateStaffAssignment } from "./staff-validator";
-import { createStaff, createStaffEmploymentDetails, getStaffEmploymentDetails, getSingleStaff, getStaff, getSingleStaffWithUserCode, addStaffToDepartment, addStaffToZonalCommand, addStaffToUnit } from "./staff-data-access";
-import { validateAccountRequest } from "../authentication/authentication-validator";
+import { createStaff, createStaffEmploymentDetails, getStaffEmploymentDetails, getSingleStaff, getStaff, getSingleStaffWithUserCode, addStaffToDepartment, addStaffToZonalCommand, addStaffToUnit, staffDetailsExists, updateStaff, staffEmploymentExists, updateStaffEmploymentDetails, getDetailedStaff } from "./staff-data-access";
 import { getUnitViaDepartment } from "../zonal-command/zonal-command-data-access";
 
 /**
@@ -12,8 +11,12 @@ export const userCreatesStaff = async (staffProspect: any): Promise<string> => {
   try {
     let staff: Staff = validateStaffDetails(staffProspect);
 
-    let staffCode = await createStaff(staff);
-
+    let staffCode = staff.staffCode;
+    if (await staffDetailsExists(staff.staffCode)) {
+      staffCode = await updateStaff(staff);
+    } else {
+      staffCode = await createStaff(staff);
+    }
     return staffCode;
   } catch (error) {
     logger.error(error.messsage);
@@ -41,7 +44,15 @@ export const userUpdatesStaff = async (staffProspect: any): Promise<string> => {
 export const userUpdateStaffEmploymentDetails = async (details: any): Promise<string> => {
   try {
     let validDetails: StaffEmploymentDetails = validateEmploymentDetails(details);
-    let staffCode = await createStaffEmploymentDetails(validDetails);
+
+    let staffCode;
+
+    if (await staffEmploymentExists(validDetails.staffNumber)) {
+      staffCode = await updateStaffEmploymentDetails(validDetails);
+    } else {
+      staffCode = await createStaffEmploymentDetails(validDetails);
+    }
+
     return staffCode;
   } catch (error) {
     logger.error(error.messsage);
@@ -53,9 +64,19 @@ export const userUpdateStaffEmploymentDetails = async (details: any): Promise<st
  * Create staff
  */
 export const userCreatesStaffEmploymentDetails = async (details: any): Promise<string> => {
+  console.log(details);
+
   try {
     let validDetails: StaffEmploymentDetails = validateEmploymentDetails(details);
-    let staffCode = await createStaffEmploymentDetails(validDetails);
+    console.log(validDetails);
+
+    let staffCode;
+
+    if (await staffEmploymentExists(validDetails.staffNumber)) {
+      staffCode = await updateStaffEmploymentDetails(validDetails);
+    } else {
+      staffCode = await createStaffEmploymentDetails(validDetails);
+    }
     return staffCode;
   } catch (error) {
     logger.error(error.messsage);
@@ -142,6 +163,18 @@ export const userGetsStaffList = async (pageSize?: number, pageNumber?: number):
   }
 };
 
+/**
+ * Get Staff members
+ */
+export const userGetsStaffDetailList = async (pageSize?: number, pageNumber?: number): Promise<any[]> => {
+  try {
+    return await getDetailedStaff(pageSize, pageNumber);
+  } catch (error) {
+    logger.error(error.messsage);
+    throw error;
+  }
+};
+
 export const userGetsSingeStaffWithUsercode = async (userCode: string): Promise<any> => {
   try {
     return await getSingleStaffWithUserCode(userCode);
@@ -185,14 +218,13 @@ export const getStaffForUnit = async (): Promise<any[]> => {
   return [];
 };
 
-export const userGetsStaffEmploymentetaills = async (staffCode: string): Promise<any> => {
+export const userGetsStaffEmploymentetails = async (staffCode: string): Promise<any> => {
   try {
     return await getStaffEmploymentDetails(staffCode);
   } catch (error) {
     logger.error(error.messsage);
     throw error;
   }
-  return [];
 };
 
 export const performInitalStaffAssignment = async (assignmentRequest: any) => {
@@ -220,8 +252,8 @@ export const performInitalStaffAssignment = async (assignmentRequest: any) => {
       userCode: assignment.userCode,
       staffCode: assignment.userCode,
       staffNumber: assignment.userCode,
-      zonalCommand: assignment.zonalCommandCode,
-      department: assignment.departmentCode,
+      zonalCommandCode: assignment.zonalCommandCode,
+      departmentCode: assignment.departmentCode,
       designation: "",
       gradeLevel: "",
       step: "",

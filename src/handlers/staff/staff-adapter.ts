@@ -2,9 +2,22 @@ import { Request, Response } from "express";
 import { adaptExpressRequest, AppAdaptedRequest } from "../../utilities/helpers/helpers";
 import logger from "../../utilities/helpers/logger";
 import { getStatusCodeFromException } from "../../utilities/responses/responses";
-import { userCreatesStaff, userGetsStaffList, userGetsSingeStaffWithUsercode, performInitalStaffAssignment } from "./staff-use-cases";
+import { userCreatesStaff, userGetsStaffList, userGetsSingeStaffWithUsercode, performInitalStaffAssignment, userGetsStaffEmploymentetails, userCreatesStaffEmploymentDetails } from "./staff-use-cases";
 
 export const getStaffList = async (req: Request, res: Response) => {
+  try {
+    let request = adaptExpressRequest(req);
+    let response = await userGetsStaffList();
+    res.status(200).json(response);
+  } catch (error) {
+    logger.error(error.message);
+    let messageText = error.message || "Sorry: Unable to process request";
+    let message = { message: messageText };
+    res.status(getStatusCodeFromException(error)).json(message);
+  }
+};
+
+export const getStaffDetailList = async (req: Request, res: Response) => {
   try {
     let request = adaptExpressRequest(req);
 
@@ -31,10 +44,10 @@ export const getStaffDetailsWithUserCode = async (req: Request, res: Response) =
     res.status(getStatusCodeFromException(error)).json(message);
   }
 };
-export const getStaffEmploymenyWithUserCode = async (req: Request, res: Response) => {
+export const getStaffEmploymentWithUserCode = async (req: Request, res: Response) => {
   try {
     let request = adaptExpressRequest(req);
-    let response = await userGetsSingeStaffWithUsercode(request.pathParams.usercode);
+    let response = await userGetsStaffEmploymentetails(request.pathParams.usercode);
     res.status(200).json(response);
   } catch (error) {
     logger.error(error.message);
@@ -48,7 +61,7 @@ export const createStaffDetails = async (req: Request, res: Response) => {
   try {
     let request = adaptExpressRequest(req);
     let response = await userCreatesStaff(request.body);
-    res.status(201).json({ message: response, staffCode: response });
+    res.status(201).json({ message: "Details updated successfully", staffCode: response });
   } catch (error) {
     logger.error(error.message);
     let messageText = error.message || "Sorry: Unable to process request";
@@ -60,8 +73,8 @@ export const createStaffDetails = async (req: Request, res: Response) => {
 export const createStaffEmploymentDetails = async (req: Request, res: Response) => {
   try {
     let request = adaptExpressRequest(req);
-    let response = await userCreatesStaff(request.body);
-    res.status(201).json({ message: response, staffCode: response });
+    let response = await userCreatesStaffEmploymentDetails(request.body);
+    res.status(201).json({ message: "Employment Details updated successfully", staffCode: response });
   } catch (error) {
     logger.error(error.message);
     let messageText = error.message || "Sorry: Unable to process request";
