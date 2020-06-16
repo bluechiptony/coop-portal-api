@@ -8,6 +8,7 @@ exports.up = function (knex) {
     table.string("first_name").notNullable();
     table.string("middle_name").nullable();
     table.string("last_name").notNullable();
+    table.string("gender").notNullable();
     table.date("date_of_birth").notNullable();
     table.string("state_of_origin").notNullable();
     table.string("lga_of_origin").notNullable();

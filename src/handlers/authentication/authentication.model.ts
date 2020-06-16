@@ -6,9 +6,6 @@ export enum AccountTypes {
   SUPPORT,
   SUPERVISOR,
   STAFF,
-  AGENT,
-  BENEFICIARY,
-  DEPENDENT,
 }
 
 export interface AuthenticatedUser {
@@ -34,7 +31,7 @@ export interface AuthenticationProfile {
   authenticationId?: number;
   userCode: string;
   emailAddress: string;
-  active: boolean;
+  active?: boolean;
   accountType: string;
   password?: string;
   verificationCode?: string;

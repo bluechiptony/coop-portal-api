@@ -10,7 +10,7 @@ const connector: knex = new Connection().knex();
 
 export const createAuthenticationProfile = async (authProfile: AuthenticationProfile): Promise<any> => {
   try {
-    let result = connector
+    let result = await connector
       .table(authTable)
       .insert({
         user_code: authProfile.userCode,
@@ -23,7 +23,7 @@ export const createAuthenticationProfile = async (authProfile: AuthenticationPro
         created_date: new Date(),
         updated_date: new Date(),
       })
-      .returning("auth_id");
+      .returning("user_code");
 
     if (Array.isArray(result)) {
       return result[0];
@@ -38,7 +38,7 @@ export const createAuthenticationProfile = async (authProfile: AuthenticationPro
 
 export const updateAuthenticationProfile = async (authProfile: AuthenticationProfile) => {
   try {
-    let result = connector
+    let result = await connector
       .table(authTable)
       .update({
         email_address: authProfile.emailAddress,

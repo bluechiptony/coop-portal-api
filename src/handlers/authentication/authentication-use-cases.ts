@@ -30,7 +30,7 @@ export const systemPerformsUserLogin = async (request: AppAdaptedRequest): Promi
   }
 };
 
-export const userCreatesAuthenticationProfile = async (request: AppAdaptedRequest): Promise<AppResponse> => {
+export const userCreatesAuthenticationProfile = async (request: AppAdaptedRequest): Promise<string> => {
   try {
     let authProfile: AuthenticationProfile = await validateAccountRequest(request.body);
 
@@ -44,7 +44,7 @@ export const userCreatesAuthenticationProfile = async (request: AppAdaptedReques
       sendAccountActivationMessage(authProfile.emailAddress, authProfile.verificationCode, true);
     }
 
-    return makeHttpResponse(201, createMessageResponse("User account successfully created"));
+    return authProfile.userCode;
   } catch (error) {
     logger.error(error.message);
     throw error;

@@ -98,3 +98,754 @@
   level: 'error',
   timestamp: '2020-06-14T21:45:56.873Z'
 }
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:16:53.139Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:16:53.144Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:16:53.144Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:17:42.595Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:17:42.596Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:17:42.596Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:45:38.302Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:45:38.306Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:45:38.306Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:45:50.736Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:45:50.737Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:45:50.737Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:54:01.901Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:54:01.902Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:54:01.902Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T03:57:13.751Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:57:13.754Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T03:57:13.754Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T04:03:57.255Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T04:03:57.258Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T04:03:57.258Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-15T05:55:04.549Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:55:04.558Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:55:04.559Z'
+}
+{
+  message: "Cannot read property 'count' of undefined",
+  level: 'error',
+  timestamp: '2020-06-15T05:55:50.232Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:55:50.234Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:55:50.234Z'
+}
+{
+  message: 'insert into "zonal_commands" ("active", "created_by", "created_date", "lga", "state", "updated_by", "updated_date", "zonal_command_code", "zonal_command_name") values ($1, DEFAULT, $2, $3, $4, DEFAULT, $5, $6, $7) returning "zonal_command_code" - column "active" of relation "zonal_commands" does not exist',
+  level: 'error',
+  timestamp: '2020-06-15T05:57:21.742Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:57:21.746Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T05:57:21.747Z'
+}
+{
+  message: 'Converting circular structure to JSON\n' +
+    "    --> starting at object with constructor 'Client_PG'\n" +
+    "    |     property 'valueForUndefined' -> object with constructor 'Raw'\n" +
+    "    --- property 'client' closes the circle",
+  level: 'error',
+  timestamp: '2020-06-15T06:04:22.559Z'
+}
+{
+  message: 'Converting circular structure to JSON\n' +
+    "    --> starting at object with constructor 'Client_PG'\n" +
+    "    |     property 'valueForUndefined' -> object with constructor 'Raw'\n" +
+    "    --- property 'client' closes the circle",
+  level: 'error',
+  timestamp: '2020-06-15T06:04:57.302Z'
+}
+{
+  message: 'select * from "zonal_commands" inner join "states" on "states"."state_id" = "zonal_commands"."state" inner join "states" on "states"."state_id" = "zonal_commands"."state" - table name "states" specified more than once',
+  level: 'error',
+  timestamp: '2020-06-15T06:06:07.830Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T06:06:07.831Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T06:06:07.831Z'
+}
+{
+  message: 'insert into "users" ("account_type", "created_by", "created_date", "email_address", "first_name", "last_name", "phone_number", "updated_by", "updated_date", "user_code") values ($1, $2, $3, $4, $5, $6, DEFAULT, $7, $8, $9) returning "user_code" - duplicate key value violates unique constraint "users_pkey"',
+  level: 'error',
+  timestamp: '2020-06-15T11:11:15.047Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T11:11:15.051Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T11:11:15.052Z'
+}
+{
+  message: 'insert into "authentication" ("account_type", "active", "created_date", "email_address", "enabled", "updated_date", "user_code", "verification_code", "verification_code_expiry") values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning "user_code" - duplicate key value violates unique constraint "authentication_pkey"',
+  level: 'error',
+  timestamp: '2020-06-15T11:15:01.317Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T11:15:01.318Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T11:15:01.318Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T12:11:48.166Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:11:48.167Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:11:48.167Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T12:21:44.353Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:21:44.367Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:21:44.367Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T12:22:50.236Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:22:50.237Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:22:50.237Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T12:23:22.260Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:23:22.260Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:23:22.260Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T12:47:05.669Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:47:05.676Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T12:47:05.676Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-15T13:48:16.827Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T13:48:16.828Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T13:48:16.828Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.478Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.788Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.789Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.821Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.822Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.822Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.838Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.839Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:10:54.841Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.310Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.313Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.314Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.441Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.443Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.444Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.448Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.449Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:13:43.449Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.159Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.161Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.162Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.168Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.168Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.168Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.303Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.304Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:15:50.304Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.501Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.503Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.507Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.513Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.514Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:42.514Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:43.066Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:43.068Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:16:43.069Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.089Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.091Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.091Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.094Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.095Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.095Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.098Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.099Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:17:45.099Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.494Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.496Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.496Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.690Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.690Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.690Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.695Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.696Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:06.696Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.669Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.672Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.675Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.690Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.690Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.690Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.716Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.717Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:18:10.718Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.863Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.870Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.871Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.876Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.876Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.877Z'
+}
+{
+  message: 'Invalid value used as weak map key',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.882Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.883Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-15T23:20:26.883Z'
+}
+{
+  message: 'Unit already exists',
+  level: 'error',
+  timestamp: '2020-06-16T00:20:21.799Z'
+}
+{
+  message: 'Unit already exists',
+  level: 'error',
+  timestamp: '2020-06-16T00:20:21.799Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T00:23:16.616Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T00:23:16.622Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T00:23:16.623Z'
+}
+{
+  message: undefined,
+  level: 'error',
+  timestamp: '2020-06-16T00:29:59.559Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T00:29:59.561Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T00:29:59.562Z'
+}
+{
+  message: 'insert into "unit_staff" ("created_date", "staff_code", "unit_code", "updated_date") values ($1, $2, DEFAULT, $3) returning "staff_code" - null value in column "unit_code" violates not-null constraint',
+  level: 'error',
+  timestamp: '2020-06-16T05:03:04.464Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T05:03:04.465Z'
+}
+{
+  message: 'insert into "unit_staff" ("created_date", "staff_code", "unit_code", "updated_date") values ($1, $2, DEFAULT, $3) returning "staff_code" - null value in column "unit_code" violates not-null constraint',
+  level: 'error',
+  timestamp: '2020-06-16T05:05:55.853Z'
+}
+{
+  message: 'Internal connection error',
+  level: 'error',
+  timestamp: '2020-06-16T05:05:55.855Z'
+}
+{
+  message: 'Email address already exists for another user',
+  level: 'error',
+  timestamp: '2020-06-16T05:14:10.994Z'
+}
+{
+  message: 'Email address already exists for another user',
+  level: 'error',
+  timestamp: '2020-06-16T05:14:10.997Z'
+}
+{
+  message: 'Authentication profile already exists',
+  level: 'error',
+  timestamp: '2020-06-16T05:14:27.874Z'
+}
+{
+  message: 'Authentication profile already exists',
+  level: 'error',
+  timestamp: '2020-06-16T05:14:27.875Z'
+}
+{
+  message: 'Invalid username/ password',
+  level: 'error',
+  timestamp: '2020-06-16T05:16:17.227Z'
+}
+{
+  message: 'Invalid username/ password',
+  level: 'error',
+  timestamp: '2020-06-16T05:16:17.228Z'
+}

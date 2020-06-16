@@ -1,6 +1,6 @@
-import { ZonalCommand } from "./zonal-command.model";
-import { createValidatedZonalCommand } from "./zonal-command-validator";
-import { zonalCommandNameExists, createZonalcommand, getZonalCommands, getSingleZonalCommand } from "./zonal-command-data-access";
+import { ZonalCommand, UnitRequest } from "./zonal-command.model";
+import { createValidatedZonalCommand, validateUnitRequest } from "./zonal-command-validator";
+import { zonalCommandNameExists, createZonalcommand, getZonalCommands, getSingleZonalCommand, unitExists, createUnitForZonalCommand, getUnitsForZonalCommand } from "./zonal-command-data-access";
 import logger from "../../utilities/helpers/logger";
 
 /**
@@ -10,7 +10,9 @@ export const userCreatesZonalCommand = async (commandRequest: any): Promise<stri
   try {
     let zonalCommand: ZonalCommand = createValidatedZonalCommand(commandRequest);
 
-    if (zonalCommandNameExists(zonalCommand.zonalCommandName)) {
+    console.log(zonalCommand);
+
+    if (await zonalCommandNameExists(zonalCommand.zonalCommandName)) {
       throw new Error("Zonal command name already exists");
     }
 
@@ -29,11 +31,30 @@ export const updateZonalCommand = async (commandRequest: any): Promise<string> =
   try {
     let zonalCommand: ZonalCommand = createValidatedZonalCommand(commandRequest);
 
-    if (zonalCommandNameExists(zonalCommand.zonalCommandName)) {
-      throw new Error("Zonal command name already exists");
+    if (!(await zonalCommandNameExists(zonalCommand.zonalCommandName))) {
+      throw new Error("Zonal command doesn't already exists");
     }
 
     let zonalCommandCode: string = await createZonalcommand(zonalCommand);
+    return zonalCommandCode;
+  } catch (error) {
+    logger.error(error.message);
+    throw error;
+  }
+};
+
+/**
+ * Create nw zonal command
+ */
+export const userCreatesUnitForZonalCommand = async (commandRequest: any): Promise<string> => {
+  try {
+    let unitRequest: UnitRequest = validateUnitRequest(commandRequest);
+
+    if (await unitExists(unitRequest.zonalCommandCode, unitRequest.departmentCode)) {
+      throw new Error("Unit already exists");
+    }
+
+    let zonalCommandCode: string = await createUnitForZonalCommand(unitRequest.zonalCommandCode, unitRequest.departmentCode);
     return zonalCommandCode;
   } catch (error) {
     logger.error(error.message);
@@ -63,9 +84,21 @@ export const userGetsZonalCommands = async (pageSize?: number, pageNumber?: numb
 /**
  * Get Single zonal command
  */
-export const userGetSingleZonalCommand = async (zonalCommandCode: string): Promise<any> => {
+export const userGetsSingleZonalCommand = async (zonalCommandCode: string): Promise<any> => {
   try {
     return await getSingleZonalCommand(zonalCommandCode);
+  } catch (error) {
+    logger.error(error.message);
+    throw error;
+  }
+};
+
+/**
+ * Get units zonal command
+ */
+export const userGetsUnitsForZonalCommand = async (zonalCommandCode: string): Promise<any> => {
+  try {
+    return await getUnitsForZonalCommand(zonalCommandCode);
   } catch (error) {
     logger.error(error.message);
     throw error;

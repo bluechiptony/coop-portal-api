@@ -9,7 +9,7 @@ export const validateNewUser = (request: any): User => {
   validateRequiredStringProperty("Email address", request.emailAddress);
   validateAccountType(request.accountType);
 
-  let userCode: string = generateToken(10);
+  let userCode: string = generateToken(10).toUpperCase();
   let user: User = {
     userCode: userCode,
     firstName: request.firstName,

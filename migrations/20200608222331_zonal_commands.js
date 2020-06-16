@@ -4,6 +4,9 @@ exports.up = function (knex) {
     table.increments("zonal_command_id").primary();
     table.string("zonal_command_code", 50).notNullable();
     table.string("zonal_command_name", 50).notNullable();
+    table.integer("state").nullable();
+    table.integer("lga").nullable();
+    table.boolean("active").nullable();
     table.date("created_date").notNullable();
     table.date("updated_date").notNullable();
     table.text("created_by");

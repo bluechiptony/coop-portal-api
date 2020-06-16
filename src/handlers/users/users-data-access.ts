@@ -10,7 +10,7 @@ const userTable: string = "users";
 const authenticationTable: string = "authentication";
 const connector: knex = new Connection().knex();
 
-export const createUser = async (user: User, creator?: AuthenticatedUser): Promise<any> => {
+export const createUser = async (user: User, creator?: string): Promise<any> => {
   try {
     let result = await connector
       .table(userTable)
@@ -23,8 +23,8 @@ export const createUser = async (user: User, creator?: AuthenticatedUser): Promi
         account_type: user.accountType,
         created_date: new Date(),
         updated_date: new Date(),
-        created_by: creator?.user?.userCode,
-        updated_by: creator?.user?.userCode,
+        created_by: creator,
+        updated_by: creator,
       })
       .returning("user_code");
 
@@ -35,7 +35,7 @@ export const createUser = async (user: User, creator?: AuthenticatedUser): Promi
   }
 };
 
-export const updateUser = async (user: User, editor: AuthenticatedUser): Promise<any> => {
+export const updateUser = async (user: User, editor: string): Promise<any> => {
   try {
     let result = await connector
       .table(userTable)
@@ -46,7 +46,7 @@ export const updateUser = async (user: User, editor: AuthenticatedUser): Promise
         email_address: user.emailAddress,
         phone_number: user.phoneNumber,
         account_type: user.accountType,
-        updated_by: editor.user.userCode,
+        updated_by: editor,
         updated_date: new Date(),
       })
       .where({ user_code: user.userCode })

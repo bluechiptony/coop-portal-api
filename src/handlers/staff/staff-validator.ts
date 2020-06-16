@@ -1,5 +1,5 @@
-import { Staff, StaffEmploymentDetails } from "./staff.model";
-import { validateRequiredStringProperty, validatePhoneNumber, validateRequiredNumericProperty } from "../../utilities/helpers/validation";
+import { Staff, StaffEmploymentDetails, AccountAssignment } from "./staff.model";
+import { validateRequiredStringProperty, validatePhoneNumber, validateRequiredNumericProperty, validateRequiredProperty, validateEmailAddress } from "../../utilities/helpers/validation";
 import { generateToken } from "../../utilities/helpers/helpers";
 
 /**
@@ -13,18 +13,28 @@ export const validateStaffDetails = (request: any): Staff => {
   validateRequiredNumericProperty("State of origin", request.stateOfOrifin);
   validateRequiredNumericProperty("Lga of origin", request.lgaOfOrigin);
   validateRequiredNumericProperty("Nationality", request.nationality);
+  validateRequiredStringProperty("Gender", request.gender);
+  validateRequiredProperty("Gender", request.gender);
 
   if (request.phonenUmber) {
     validatePhoneNumber(request.phoneNumber);
   }
 
+  validateEmailAddress(request.emailAddress);
+
+  let staffCode;
+  if (!request.userCode) {
+    staffCode = generateToken(8).toUpperCase();
+  }
+
   return {
-    userCode: request.userCode || generateToken(8).toUpperCase(),
-    staffCode: request.staffCode || generateToken(8).toUpperCase(),
+    userCode: request.userCode || staffCode,
+    staffCode: request.userCode || staffCode,
     firstName: request.firstName,
     middleName: request.middleName,
     lastName: request.lastName,
     dob: request.dob,
+    gender: request.gender,
     nationality: request.nationality,
     stateOfOrigin: request.stateOfOrigin,
     lgaOfOrigin: request.lgaOfOrigin,
@@ -61,5 +71,17 @@ export const validateEmploymentDetails = (request: any): StaffEmploymentDetails 
     employedDate: request.employedDate,
     statutoryRetirementDate: request.statutoryRetirementDate,
     serviceRetirementDate: request.serviceRetirementDate,
+  };
+};
+
+export const validateStaffAssignment = (request: any): AccountAssignment => {
+  validateRequiredStringProperty("Department", request.departmentCode);
+  validateRequiredStringProperty("Zonal command", request.zonalCommandCode);
+  validateRequiredStringProperty("User code", request.userCode);
+
+  return {
+    departmentCode: request.departmentCode,
+    zonalCommandCode: request.zonalCommandCode,
+    userCode: request.userCode,
   };
 };

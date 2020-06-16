@@ -12,14 +12,16 @@ const mailgun = Mailgun({
 
 export const sendAccountActivationMessage = (emailAddress: string, activationCode: string, publicAccess: boolean): void => {
   let messageDetails: any = {
-    from: "Benue state Health Insurance Agency <donot-reply@bnshia.be.gov.ng>",
+    from: "NAPTIP <donot-reply@nassconnect.ng>",
     to: emailAddress,
     subject: "Account Activation",
-    template: "account_activation",
-    "h:X-Mailgun-Variables": JSON.stringify({ activationUrl: `${process.env.APP_PORTAL_DOMAIN}/activate-account/${activationCode}` }),
+    template: "coop_activate_account",
+    "h:X-Mailgun-Variables": JSON.stringify({ actionUrl: `${process.env.APP_PORTAL_DOMAIN}/activate-account/${activationCode}` }),
   };
 
   mailgun.messages().send(messageDetails, (err, body) => {
+    logger.info(body);
+
     if (err) {
       logger.error(err.message);
     }
@@ -28,14 +30,15 @@ export const sendAccountActivationMessage = (emailAddress: string, activationCod
 
 export const sendPasswordRecoveyMessage = (emailAddress: string, activationCode: string, publicDomain: boolean): void => {
   let messageDetails: any = {
-    from: "Benue state Health Insurance Agency <donot-reply@bnshia.be.gov.ng>",
+    from: "NAPTIP <donot-reply@nassconnect.ng>",
     to: emailAddress,
     subject: "Password Recovery",
-    template: "password_recovery",
-    "h:X-Mailgun-Variables": JSON.stringify({ activationUrl: `${process.env.APP_PORTAL_DOMAIN}/reset-password/${activationCode}` }),
+    template: "coop_recover_password",
+    "h:X-Mailgun-Variables": JSON.stringify({ actionUrl: `${process.env.APP_PORTAL_DOMAIN}/reset-password/${activationCode}` }),
   };
 
   mailgun.messages().send(messageDetails, (err, body) => {
+    logger.info(body);
     if (err) {
       logger.error(err.message);
     }
@@ -44,7 +47,7 @@ export const sendPasswordRecoveyMessage = (emailAddress: string, activationCode:
 
 export const sendBeneficiaryRegistrationMessage = (emailAddress: string, userCode: string, firstName: string): void => {
   let messageDetails: any = {
-    from: "Benue state Health Insurance Agency <donot-reply@bnshia.be.gov.ng>",
+    from: "NAPTIP <donot-reply@nassconnect.ng>",
     to: emailAddress,
     subject: "Insurance Enrollment",
     template: "enrolment_confirmation",

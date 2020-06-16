@@ -1,7 +1,9 @@
 import logger from "../../utilities/helpers/logger";
-import { Staff, StaffEmploymentDetails } from "./staff.model";
-import { validateStaffDetails, validateEmploymentDetails } from "./staff-validator";
-import { createStaff, createStaffEmploymentDetails, getStaffEmploymentDetails, getSingleStaff, getStaff, getSingleStaffWithUserCode } from "./staff-data-access";
+import { Staff, StaffEmploymentDetails, AccountAssignment } from "./staff.model";
+import { validateStaffDetails, validateEmploymentDetails, validateStaffAssignment } from "./staff-validator";
+import { createStaff, createStaffEmploymentDetails, getStaffEmploymentDetails, getSingleStaff, getStaff, getSingleStaffWithUserCode, addStaffToDepartment, addStaffToZonalCommand, addStaffToUnit } from "./staff-data-access";
+import { validateAccountRequest } from "../authentication/authentication-validator";
+import { getUnitViaDepartment } from "../zonal-command/zonal-command-data-access";
 
 /**
  * Create staff
@@ -9,7 +11,9 @@ import { createStaff, createStaffEmploymentDetails, getStaffEmploymentDetails, g
 export const userCreatesStaff = async (staffProspect: any): Promise<string> => {
   try {
     let staff: Staff = validateStaffDetails(staffProspect);
+
     let staffCode = await createStaff(staff);
+
     return staffCode;
   } catch (error) {
     logger.error(error.messsage);
@@ -86,13 +90,31 @@ export const changeStaffActiveStatus = async (): Promise<string> => {
 /**
  * add staff member to department
  */
-export const addStaffToDepartment = async (): Promise<string> => {
+export const userAddsStaffToDepartment = async (): Promise<string> => {
   try {
   } catch (error) {
     logger.error(error.messsage);
     throw error;
   }
   return "";
+};
+
+export const userAddsStaffToZonalCommand = async (staffCode: string, zonalCommandCode: string) => {
+  try {
+    //check if staff is in unit
+  } catch (error) {
+    logger.error(error.messsage);
+    throw error;
+  }
+};
+
+export const userAddsStaffToUnit = async (staffCode: string, unitCode: string) => {
+  try {
+    // check if staff in unit
+  } catch (error) {
+    logger.error(error.messsage);
+    throw error;
+  }
 };
 
 /**
@@ -111,7 +133,7 @@ export const changeStaffMembersDepartment = async (): Promise<string> => {
 /**
  * Get Staff members
  */
-export const userGetStaffList = async (pageSize?: number, pageNumber?: number): Promise<any[]> => {
+export const userGetsStaffList = async (pageSize?: number, pageNumber?: number): Promise<any[]> => {
   try {
     return await getStaff(pageSize, pageNumber);
   } catch (error) {
@@ -171,4 +193,50 @@ export const userGetsStaffEmploymentetaills = async (staffCode: string): Promise
     throw error;
   }
   return [];
+};
+
+export const performInitalStaffAssignment = async (assignmentRequest: any) => {
+  try {
+    let assignment: AccountAssignment = validateStaffAssignment(assignmentRequest);
+    //assign to zonal command
+
+    let dept = await addStaffToDepartment(assignment.userCode, assignment.departmentCode);
+
+    logger.info("Dept reg complete");
+    let zone = await addStaffToZonalCommand(assignment.userCode, assignment.zonalCommandCode);
+
+    logger.info("Zone reg complete");
+    //get unit code
+    let unit: any = await getUnitViaDepartment(assignment.zonalCommandCode, assignment.departmentCode);
+
+    console.log(unit);
+
+    let unReg = await addStaffToUnit(assignment.userCode, unit.unitCode);
+
+    logger.info("Unit reg reg complete");
+    // create employment details
+
+    let employment: StaffEmploymentDetails = {
+      userCode: assignment.userCode,
+      staffCode: assignment.userCode,
+      staffNumber: assignment.userCode,
+      zonalCommand: assignment.zonalCommandCode,
+      department: assignment.departmentCode,
+      designation: "",
+      gradeLevel: "",
+      step: "",
+      unit: unit.unitCode,
+      employedDate: new Date(),
+    };
+
+    console.log(employment);
+
+    let reg = await createStaffEmploymentDetails(employment);
+    logger.info("Initial assignment complete");
+    //assign to department
+    //assign to unit
+  } catch (error) {
+    logger.error(error.message);
+    throw error;
+  }
 };

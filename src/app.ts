@@ -5,9 +5,9 @@ import * as dotenv from "dotenv";
 import userRoutes from "./routes/users";
 import authenticationRoutes from "./routes/authentication";
 import departmentRoutes from "./routes/department";
+import zonalCommandRoutes from "./routes/zonal-command";
 import localeRoutes from "./routes/locale";
-// import serviceRoutes from "./routes/services";
-// import organizationRoutes from "./routes/organization";
+import staffRoutes from "./routes/staff";
 // import dispensaryRoutes from "./routes/dispensary";
 // import beneficiaryRoutes from "./routes/beneficiary";
 
@@ -27,8 +27,8 @@ bnshia.use("/auth", authenticationRoutes);
 bnshia.use("/users", userRoutes);
 bnshia.use("/locale", localeRoutes);
 bnshia.use("/departments", departmentRoutes);
-// bnshia.use("/services", serviceRoutes);
-// bnshia.use("/organizations", organizationRoutes);
+bnshia.use("/staff", staffRoutes);
+bnshia.use("/zonal-commands", zonalCommandRoutes);
 // bnshia.use("/dispensary", dispensaryRoutes);
 // bnshia.use("/beneficiaries", beneficiaryRoutes);
 

@@ -4,7 +4,7 @@ import { User } from "./users.model";
 import { validateNewUser } from "./users-validator";
 import logger from "../../utilities/helpers/logger";
 
-export const systemOrUserCreatesUser = async (user: any, creator: AuthenticatedUser) => {
+export const systemOrUserCreatesUser = async (user: any, creator?: string) => {
   try {
     let createdUser: User = validateNewUser(user);
     if (await checkIfUSerExists(createdUser.emailAddress)) {

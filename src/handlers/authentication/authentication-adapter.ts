@@ -80,7 +80,7 @@ export const createAuthenticationProfile = async (req: Request, res: Response) =
   try {
     let request = adaptExpressRequest(req);
     let response = await userCreatesAuthenticationProfile(request);
-    res.status(response?.statusCode).json(response.data);
+    res.status(201).json({ message: "Profile successfully created", userCode: response });
   } catch (error) {
     logger.error(error.message);
     let messageText = error.message || "Sorry: Unable to process request";

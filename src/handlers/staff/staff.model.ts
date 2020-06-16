@@ -6,6 +6,7 @@ export interface Staff {
   middleName?: string;
   lastName: string;
   dob: Date;
+  gender: string;
   nationality: string;
   stateOfOrigin: number;
   lgaOfOrigin: number;
@@ -19,8 +20,8 @@ export interface StaffEmploymentDetails {
   staffNumber?: string;
   zonalCommand: string;
   department: string;
-  designation: string;
-  gradeLevel: string;
+  designation?: string;
+  gradeLevel?: string;
   step: string;
   unit?: string;
   employedDate: Date;
@@ -34,4 +35,10 @@ export interface StaffContact {
   firstName: string;
   lastName: string;
   emailAddress: string;
+}
+
+export interface AccountAssignment {
+  userCode: string;
+  zonalCommandCode: string;
+  departmentCode: string;
 }
