@@ -2341,3 +2341,8 @@
   level: 'info',
   timestamp: '2020-06-16T06:52:10.943Z'
 }
+{
+  message: 'Login attempt: admin@admin.com',
+  level: 'info',
+  timestamp: '2020-12-29T20:13:13.733Z'
+}
